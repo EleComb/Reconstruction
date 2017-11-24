@@ -2,8 +2,10 @@ package _1;
 
 import org.junit.Test;
 
-public class CustomerTest {
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
+public class CustomerTest {
 
     @Test
     public void statement() throws Exception {
@@ -17,5 +19,11 @@ public class CustomerTest {
         System.out.println("------------------");
         System.out.println(stmt);
 
+        String result = "Rental Record for 顾客1\n" +
+                "\t第一部电影\t0.0\n" +
+                "Amount owed is 1.5\n" +
+                "You earned 1 frequent renter points";
+
+        assertEquals("测试时间", result, stmt);
     }
 }
