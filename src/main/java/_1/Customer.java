@@ -26,25 +26,29 @@ public class Customer {
      * 生成详单的函数。
      */
     public String statement() {
-        double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration rentals = _rentals.elements();
         String result = "Rental Record for " + getName() + "\n";
         while(rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
-
-            // add frequent renter points
-            frequentRenterPoints++;
-            // add bonus for a two day new release rental
-            if((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1 )
-                frequentRenterPoints++;
+            frequentRenterPoints += each.getFrequentRenterPoints();
 
             // 找出多余的变量，使用Replace Temp with Query : Alt+Shift+,
                     result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
-            totalAmount += each.getCharge();
          }
-        result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
+        result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
         result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+        return result;
+    }
+
+    // 临时变量助长冗长而复杂的函数，使用Replace Temp with Query和Query Method
+    private double getTotalCharge() {
+        double result = 0;
+        Enumeration rentals = _rentals.elements();
+        while(rentals.hasMoreElements()) {
+            Rental each = (Rental) rentals.nextElement();
+            result += each.getCharge();
+        }
         return result;
     }
 

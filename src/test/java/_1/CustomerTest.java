@@ -20,7 +20,7 @@ public class CustomerTest {
         System.out.println(stmt);
 
         String result = "Rental Record for 顾客1\n" +
-                "\t第一部电影\t0.0\n" +
+                "\t第一部电影\t1.5\n" +
                 "Amount owed is 1.5\n" +
                 "You earned 1 frequent renter points";
 
