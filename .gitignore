@@ -3,3 +3,7 @@ target/classes/_1/Rental.class
 target/classes/_1/Customer.class
 target/test-classes/_1/CustomerTest.class
 target/classes/_1/Movie.class
+target/classes/_1/Price.class
+target/classes/_1/NewReleasePrice.class
+target/classes/_1/ChildrensPrice.class
+target/classes/_1/RegularPrice.class
