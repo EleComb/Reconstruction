@@ -54,11 +54,7 @@ public class Movie {
 
     // 运用多态取代与价格相关的条件逻辑
     public int getFrequentRenterPoints(int daysRented) {
-        // add bonus for a two day new release rental
-        if((getPriceCode() == Movie.NEW_RELEASE) && daysRented > 1 )
-            return 2;
-        else
-            return 1;
+        return _price.getFrequentRenterPoints(daysRented);
     }
 
 }

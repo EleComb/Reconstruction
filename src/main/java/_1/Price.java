@@ -10,6 +10,11 @@ public abstract class Price {
      *     Alt+Shift+V Move Method
      * */
     abstract double getCharge(int daysRented);
+
+    // 运用多态取代与价格相关的条件逻辑
+    public int getFrequentRenterPoints(int daysRented) {
+        return 1;
+    }
 }
 
 class ChildrensPrice extends Price {
@@ -34,6 +39,9 @@ class NewReleasePrice extends Price {
         return daysRented * 3;
     }
 
+    public int getFrequentRenterPoints(int daysRented) {
+        return (daysRented > 1) ? 2 : 1;
+    }
 }
 
 class RegularPrice extends Price {
