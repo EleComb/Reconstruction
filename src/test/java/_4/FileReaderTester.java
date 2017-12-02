@@ -16,8 +16,8 @@ public class FileReaderTester extends TestCase{
 
     protected void setUp() {
         try {
-            input = new FileReader("src/test/java/_4/test.txt");
-            empty = newEmptyFile("src/test/java/_4/empty.txt");
+            input = new FileReader("src/test/java/_4/txt/test.txt");
+            empty = newEmptyFile("src/test/java/_4/txt/empty.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -83,6 +83,17 @@ public class FileReaderTester extends TestCase{
         assertEquals("read at end", -1, input.read());
         assertEquals("read past end", -1, input.read());
 
+    }
+
+    /**
+     * 测试异常
+     * */
+    public void testReadAfterClose() throws IOException {
+        input.close();
+        try {
+            input.read();
+            fail("no exception for read past end");
+        } catch (IOException io) {}
     }
 
 //    public static TestSuite suite() {
