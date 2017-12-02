@@ -59,16 +59,30 @@ public class FileReaderTester extends TestCase{
         }
     }
 
-    /**
-     * 测试关键点：寻找边界条件
-     * 对于文件读取，空文件自然是边界条件。
-     * */
+
     public void testReadBoundaries() throws IOException {
-        File empty = new File("src/test/java/_4/empty.txt");
-        FileOutputStream out = new FileOutputStream(empty);
-        out.close();
-        FileReader in = new FileReader(empty);
-        assertEquals(-1, in.read());
+        /**
+         * 测试关键点：寻找边界条件
+         * 对于文件读取，空文件自然是边界条件。
+         * */
+//        File empty = new File("src/test/java/_4/empty.txt");
+//        FileOutputStream out = new FileOutputStream(empty);
+//        out.close();
+//        FileReader in = new FileReader(empty);
+//        assertEquals(-1, in.read());
+
+        /**
+         * 文件内容的边界条件。
+         * */
+        assertEquals("read first char", 'd', input.read());
+        int ch;
+        for (int i = 1; i < 100; i++) {
+            ch = input.read();
+        }
+//        assertEquals("read last char", 'd', input.read());
+        assertEquals("read at end", -1, input.read());
+        assertEquals("read past end", -1, input.read());
+
     }
 
 //    public static TestSuite suite() {
