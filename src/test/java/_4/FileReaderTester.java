@@ -39,14 +39,23 @@ public class FileReaderTester extends TestCase{
         }
     }
 
-//    public static Test suite() {
-//        TestSuite suite = new TestSuite();
-//        suite.addTest(new FileReaderTester("testRead"));
-//        return (Test) suite;
-//    }
-//
-//    public static void main(String[] args) {
-//        junit.textui.TestRunner.run((junit.framework.Test) suite());
-//    }
+    public void testReadAtEnd() throws IOException {
+        int ch = -1234;
+        for (int i = 0; i < 141; i++) {
+            ch = input.read();
+            assertEquals(-1, input.read());
+        }
+    }
+
+    public static TestSuite suite() {
+        TestSuite suite = new TestSuite();
+        suite.addTest(new FileReaderTester("testRead"));
+        suite.addTest(new FileReaderTester("testReadAtEnd"));
+        return suite;
+    }
+
+    public static void main(String[] args) {
+        junit.textui.TestRunner.run(suite());
+    }
 
 }
