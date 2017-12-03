@@ -10,8 +10,10 @@ public class Extract_Method {
 
     void printOwing(double amount) {
         printBanner();
+        printDetail(amount);
+    }
 
-        // print detail
+    private void printDetail(double amount) {
         System.out.println("name:" + name);
         System.out.println("amount" + amount);
     }
