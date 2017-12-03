@@ -11,3 +11,4 @@ target/classes/_1/起床.class
 target/test-classes/_4/FileReaderTester.class
 target/test-classes/_4/MasterTester.class
 target/test-classes/_4/FileWriterTester.class
+*.class
