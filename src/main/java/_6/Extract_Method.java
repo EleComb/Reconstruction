@@ -28,7 +28,7 @@ public class Extract_Method {
         System.out.println(outstanding);
 
         // print details
-        printDetail(amount);
+        printDetail(outstanding);
     }
 
     private void printBanner() {
@@ -37,9 +37,9 @@ public class Extract_Method {
         System.out.println("*************************");
     }
 
-    private void printDetail(double amount) {
+    private void printDetail(double outstanding) {
         System.out.println("name:" + name);
-        System.out.println("amount" + amount);
+        System.out.println("amount:" + outstanding);
     }
 
     public static void main(String[] args) {
