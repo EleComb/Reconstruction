@@ -4,6 +4,9 @@ import _6.source.Order;
 
 import java.util.Enumeration;
 
+/**
+ * 提取方法
+ * */
 public class Extract_Method {
 
     private String name = "";

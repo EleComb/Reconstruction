@@ -1,14 +1,14 @@
 package _6;
 
+/**
+ * 内联函数。
+ * */
 public class Inline_Method {
 
     int numberOfLateDeliveries = 0;
 
     int getRating() {
-        return (moreThanFiveLateDeliveries()) ? 2 : 1;
+        return (numberOfLateDeliveries> 5) ? 2 : 1;
     }
 
-    boolean moreThanFiveLateDeliveries() {
-        return numberOfLateDeliveries > 5;
-    }
 }
