@@ -42,8 +42,8 @@ public class Extract_Method {
         System.out.println("amount:" + outstanding);
     }
 
-    public static void main(String[] args) {
-        Extract_Method em = new Extract_Method("thisName");
-        em.printOwing(11);
-    }
+//    public static void main(String[] args) {
+//        Extract_Method em = new Extract_Method("thisName");
+//        em.printOwing(11);
+//    }
 }

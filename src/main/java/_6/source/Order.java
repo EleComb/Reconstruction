@@ -18,4 +18,8 @@ public class Order {
         return i;
     }
 
+    public double basePrice() {
+        return 10.0;
+    }
+
 }
