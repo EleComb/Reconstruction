@@ -8,22 +8,24 @@ public class Extract_Method {
 
     private String name = "";
     Order orders = new Order(0);
-    double previousAmount = 10;
 
     public Extract_Method(String name) {
         this.name = name;
     }
 
-    void printOwing(double amount) {
-        Enumeration e = orders.elements();
-        double outstanding = previousAmount * 1.2;
-
+    void printOwing(double previousAmount) {
         printBanner();
+        double outstanding = getOutstanding(previousAmount * 1.2);
+        printDetail(outstanding);
+    }
+
+    private double getOutstanding(double result) {
+        Enumeration e = orders.elements();
         while (e.hasMoreElements()) {
             Order each = (Order) e.nextElement();
-            outstanding += each.getAmount();
+            result += each.getAmount();
         }
-        printDetail(outstanding);
+        return result;
     }
 
     private void printBanner() {
