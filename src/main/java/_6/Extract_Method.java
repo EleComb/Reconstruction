@@ -14,21 +14,19 @@ public class Extract_Method {
     }
 
     void printOwing(double amount) {
+        printBanner();
+        double outstanding = getOutstanding();
+        printDetail(outstanding);
+    }
+
+    private double getOutstanding() {
         Enumeration e = orders.elements();
         double outstanding = 0.0;
-
-        // print banner
-        printBanner();
-
-        // calculate outstanding
         while (e.hasMoreElements()) {
             Order each = (Order) e.nextElement();
             outstanding += each.getAmount();
         }
-        System.out.println(outstanding);
-
-        // print details
-        printDetail(outstanding);
+        return outstanding;
     }
 
     private void printBanner() {
