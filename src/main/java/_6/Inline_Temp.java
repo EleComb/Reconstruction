@@ -7,11 +7,10 @@ import _6.source.Order;
  * */
 public class Inline_Temp {
 
-    Order anOrder = new Order(10);
+    Order anOrder = new Order(100);
 
     public boolean basePriceIsBig() {
-        double basePrice = anOrder.basePrice();
-        return (basePrice > 1000);
+        return (anOrder.basePrice() > 1000);
     }
 
 }
