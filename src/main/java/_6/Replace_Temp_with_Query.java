@@ -7,10 +7,13 @@ public class Replace_Temp_with_Query {
 
     int quantity = 10, itemPrice = 10;
 
-    // 将两个临时变量去掉，一次一个。
+    /**
+     * 将两个临时变量去掉，一次一个。
+     * 先声明final确保变量只赋值一次。
+     */
     double getPrice() {
-        int basePrice = quantity * itemPrice;
-        double discountFactor;
+        final int basePrice = quantity * itemPrice;
+        final double discountFactor;
         if(basePrice > 1000) discountFactor = 0.95;
         else discountFactor = 0.98;
         return basePrice * discountFactor;
