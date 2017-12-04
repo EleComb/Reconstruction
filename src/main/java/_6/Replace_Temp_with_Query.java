@@ -8,11 +8,14 @@ public class Replace_Temp_with_Query {
     double quantity = 10, itemPrice = 10;
 
     public double test() {
-        double basePrice = quantity * itemPrice;
-        if(basePrice > 1000) {
-            return basePrice * 0.95;
+        if(getBasePrice() > 1000) {
+            return getBasePrice() * 0.95;
         } else {
-            return basePrice * 0.98;
+            return getBasePrice() * 0.98;
         }
+    }
+
+    private double getBasePrice() {
+        return quantity * itemPrice;
     }
 }
