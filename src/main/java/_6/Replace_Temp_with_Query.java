@@ -12,11 +12,10 @@ public class Replace_Temp_with_Query {
      * 先声明final确保变量只赋值一次。
      */
     double getPrice() {
-        final int basePrice = quantity * itemPrice;
         final double discountFactor;
-        if(basePrice > 1000) discountFactor = 0.95;
+        if(getBasePrice() > 1000) discountFactor = 0.95;
         else discountFactor = 0.98;
-        return basePrice * discountFactor;
+        return getBasePrice() * discountFactor;
     }
 
     public double test() {
