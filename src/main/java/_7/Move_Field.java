@@ -7,8 +7,17 @@ public class Move_Field {
     class Account {
         private AccountType type;
 
+        //先生成构造方法Self Encapsulate Field(171)，再做委托更好用。
+        public double getInterestRate() {
+            return type.getInterestRate();
+        }
+
+        public void setInterestRate(double interestRate) {
+            type.setInterestRate(interestRate);
+        }
+
         double interestForAmount_days(double amount, int days) {
-            return type.getInterestRate() * amount * days / 365;
+            return getInterestRate() * amount * days / 365;
         }
     }
 
