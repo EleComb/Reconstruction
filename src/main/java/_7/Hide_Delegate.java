@@ -14,6 +14,15 @@ public class Hide_Delegate {
         public void setDepartment(Department department) {
             this.department = department;
         }
+
+        /**
+         * 以前要 john.getDepartment().getManager()
+         * 现在要 john,getManager()
+         * 即可。
+         * */
+        public Person getManager() {
+            return department.getManager();
+        }
     }
 
     class Department {
