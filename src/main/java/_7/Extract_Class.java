@@ -11,32 +11,52 @@ public class Extract_Class {
         }
 
         public String getOfficeAreaCode() {
-            return officeAreaCode;
+            officeTelephone.getAreaCode();
         }
 
         public void setOfficeAreaCode(String officeAreaCode) {
-            this.officeAreaCode = officeAreaCode;
+            officeTelephone.setAreaCode(officeAreaCode);
         }
 
         public String getOfficeNumber() {
-            return officeNumber;
+            return officeTelephone.getNumber();
         }
 
         public void setOfficeNumber(String officeNumber) {
-            this.officeNumber = officeNumber;
+            officeTelephone.setNumber(officeNumber);
         }
 
         public String getTelephoneNumber() {
-            return ("(" + officeAreaCode + ") " + officeNumber);
+            return officeTelephone.getTelephoneNumber();
         }
 
         private String name;
-        private String officeAreaCode;
-        private String officeNumber;
+        private TelephoneNumber officeTelephone = new TelephoneNumber();
     }
 
     class TelephoneNumber{
-        private TelephoneNumber officeTelephone = new TelephoneNumber();
+        private String areaCode;
+        private String number;
+
+        public String getAreaCode() {
+            return areaCode;
+        }
+
+        public void setAreaCode(String officeAreaCode) {
+            this.areaCode = officeAreaCode;
+        }
+
+        public String getNumber() {
+            return number;
+        }
+
+        public void setNumber(String number) {
+            this.number = number;
+        }
+
+        public String getTelephoneNumber() {
+            return ("(" + getAreaCode() + ") " + getNumber());
+        }
     }
 
 }
