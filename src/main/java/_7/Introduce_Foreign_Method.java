@@ -10,22 +10,15 @@ public class Introduce_Foreign_Method {
     private PriviousEnd previousEnd;
 
     public void test() {
-        Date newStart = new Date(previousEnd.getYear(), previousEnd.getMonth(), previousEnd.getDate() + 1);
+        Date newStart = nextDay(previousEnd);
     }
 
-    class PriviousEnd {
+    private Date nextDay(Date arg) {
+        return new Date(arg.getYear(), arg.getMonth(), arg.getDate() + 1);
+    }
 
-        int getYear() {
-            return 0;
-        }
+    class PriviousEnd extends Date {
 
-        int getMonth() {
-            return 0;
-        }
-
-        int getDate() {
-            return 0;
-        }
     }
 
 }
