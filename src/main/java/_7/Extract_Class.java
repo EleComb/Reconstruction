@@ -26,6 +26,10 @@ public class Extract_Class {
             this.officeNumber = officeNumber;
         }
 
+        public String getTelephoneNumber() {
+            return ("(" + officeAreaCode + ") " + officeNumber);
+        }
+
         private String name;
         private String officeAreaCode;
         private String officeNumber;
