@@ -11,7 +11,7 @@ public class Extract_Class {
         }
 
         public String getOfficeAreaCode() {
-            officeTelephone.getAreaCode();
+            return officeTelephone.getAreaCode();
         }
 
         public void setOfficeAreaCode(String officeAreaCode) {
