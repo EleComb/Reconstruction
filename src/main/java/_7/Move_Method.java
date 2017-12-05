@@ -13,8 +13,21 @@ public class Move_Method {
         double bankCharge() {
             double result = 4.5;
 //            if(daysOverdrawn > 0) result += overdraftCharge();
-            if(daysOverdrawn > 0) result += type.overdraftCharge(new Account());
+            if(daysOverdrawn > 0) result += overdraftCharge();
             return result;
+        }
+
+        /**
+         * 这个情况就要搬回去
+         * */
+        double overdraftCharge() {
+            if(type.isPremium()) {
+                double result = 10;
+                if(getDaysOverDrawn() > 7) result += (getDaysOverDrawn() - 7) * 0.85;
+                return result;
+            } else {
+                return getDaysOverDrawn() * 1.75;
+            }
         }
 
         double getDaysOverDrawn() {
@@ -27,17 +40,6 @@ public class Move_Method {
             return false;
         }
 
-        /**
-         * 这个情况就要搬回去
-         * */
-        double overdraftCharge(Account account) {
-            if(isPremium()) {
-                double result = 10;
-                if(account.getDaysOverDrawn() > 7) result += (account.getDaysOverDrawn() - 7) * 0.85;
-                return result;
-            } else {
-                return account.getDaysOverDrawn() * 1.75;
-            }
-        }
+
     }
 }
