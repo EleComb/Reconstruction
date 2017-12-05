@@ -26,6 +26,9 @@ public class Introduce_Explaining_Variable {
 
     double price() {
         // price is base price - quantity discount + shipping
-        return quantity * itemPrice - Math.max(0, quantity - 500) * itemPrice * 0.05 + Math.min(quantity * itemPrice * 0.1, 100);
+        final double basePrice = quantity * itemPrice;
+        final double quantityDiscount =  Math.max(0, quantity - 500) * itemPrice * 0.05;
+        final double shipping = Math.min(basePrice * 0.1, 100);
+        return basePrice - quantityDiscount + shipping;
     }
 }
