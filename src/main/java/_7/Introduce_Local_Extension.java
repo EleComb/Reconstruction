@@ -14,8 +14,16 @@ public class Introduce_Local_Extension {
             super(year, month, day);
         }
 
-        public MfDateSub nextDay{
+        public MfDateSub(String dateString) {
+            super(Long.parseLong(dateString));
+        }
 
+        public MfDateSub(Date arg) {
+            super(arg.getTime());
+        }
+
+        Date nextDay() {
+            return new Date(getYear(), getMonth(), getDate() + 1);
         }
 
         public int dayOfYear() {
