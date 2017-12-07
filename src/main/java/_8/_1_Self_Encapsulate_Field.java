@@ -5,9 +5,27 @@ package _8;
  * */
 public class _1_Self_Encapsulate_Field {
 
-    private int low, high;
+    private int low;
+
+    public int getLow() {
+        return low;
+    }
+
+    public void setLow(int low) {
+        this.low = low;
+    }
+
+    public int getHigh() {
+        return high;
+    }
+
+    public void setHigh(int high) {
+        this.high = high;
+    }
+
+    private int high;
 
     boolean inchudes(int arg) {
-        return arg >= low && arg <= high;
+        return arg >= getLow() && arg <= getHigh();
     }
 }
