@@ -12,6 +12,7 @@ public class _2_Replace_Data_Value_with_Object {
             Order each = (Order) iter.next();
             if(each.getCustomer().equals(customer)) result++;
         }
+        return result;
     }
 
     class Order {
