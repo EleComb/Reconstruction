@@ -10,27 +10,40 @@ public class _2_Replace_Data_Value_with_Object {
         Iterator iter = orders.iterator();
         while (iter.hasNext()) {
             Order each = (Order) iter.next();
-            if(each.getCustomer().equals(customer)) result++;
+            if(each.getCustomerName().equals(customer)) result++;
         }
         return result;
     }
 
     class Order {
 
-        private String customer;
+        private Customer customer;
 
-        public Order(String customer) {
-            this.customer = customer;
+        public Order(String customerName) {
+            this.customer = new Customer(customerName);
         }
 
-        public String getCustomer() {
-            return customer;
+        public String getCustomerName() {
+            return customer.getName();
         }
 
-        public void setCustomer(String customer) {
-            this.customer = customer;
+        public void setCustomer(String customerName) {
+            this.customer = new Customer(customerName);
         }
 
+    }
+
+    class Customer {
+
+        private final String name;
+
+        public Customer(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
     }
 
 }
