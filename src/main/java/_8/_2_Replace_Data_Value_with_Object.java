@@ -3,6 +3,9 @@ package _8;
 import java.util.Collection;
 import java.util.Iterator;
 
+/**
+ * 以对象取代数据值
+ * */
 public class _2_Replace_Data_Value_with_Object {
 
     private static int numberOfOrdersFor(Collection orders, String customer) {
