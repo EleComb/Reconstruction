@@ -71,7 +71,7 @@ public class _8_Introduce_Local_Extension {
 
     }
 
-    public static void main(String[] args) {
-    }
+//    public static void main(String[] args) {
+//    }
 
 }
