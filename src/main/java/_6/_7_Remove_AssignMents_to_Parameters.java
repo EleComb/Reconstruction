@@ -3,7 +3,7 @@ package _6;
 /**
  * 移除对参数的赋值。
  * */
-public class Remove_AssignMents_to_Parameters {
+public class _7_Remove_AssignMents_to_Parameters {
 
     public int discount(final int inputVal,final int quantity,final int yearToDate){
         int result = inputVal;

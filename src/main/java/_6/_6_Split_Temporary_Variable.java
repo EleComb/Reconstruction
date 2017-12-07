@@ -3,7 +3,7 @@ package _6;
 /**
  * 分解临时变量
  * */
-public class Split_Temporary_Variable {
+public class _6_Split_Temporary_Variable {
 
     private double height = 1, width = 2;
 

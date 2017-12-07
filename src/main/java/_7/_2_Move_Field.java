@@ -3,7 +3,7 @@ package _7;
 /**
  * 搬移字段。
  * */
-public class Move_Field {
+public class _2_Move_Field {
     class Account {
         private AccountType type;
 

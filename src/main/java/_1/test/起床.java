@@ -1,4 +1,4 @@
-package _1;
+package _1.test;
 
 public class 起床 {
 

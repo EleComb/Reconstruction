@@ -3,7 +3,7 @@ package _6;
 /**
  * 内联函数。
  * */
-public class Inline_Method {
+public class _2_Inline_Method {
 
     int numberOfLateDeliveries = 0;
 

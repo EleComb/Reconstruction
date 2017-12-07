@@ -3,7 +3,7 @@ package _6;
 /**
  * 引入解释性变量
  * */
-public class Introduce_Explaining_Variable {
+public class _5_Introduce_Explaining_Variable {
 
     private double quantity, itemPrice;
 

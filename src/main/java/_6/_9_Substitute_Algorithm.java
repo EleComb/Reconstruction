@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 替换算法
  * */
-public class Substitute_Algorithm {
+public class _9_Substitute_Algorithm {
 
     String foundPerson(String[] people) {
         List candidates = Arrays.asList(new String[]{"Don", "John", "Kent"});

@@ -7,12 +7,12 @@ import java.util.Enumeration;
 /**
  * 提取方法
  * */
-public class Extract_Method {
+public class _1_Extract_Method {
 
     private String name = "";
     Order orders = new Order(0);
 
-    public Extract_Method(String name) {
+    public _1_Extract_Method(String name) {
         this.name = name;
     }
 
@@ -43,7 +43,7 @@ public class Extract_Method {
     }
 
 //    public static void main(String[] args) {
-//        Extract_Method em = new Extract_Method("thisName");
+//        _1_Extract_Method em = new _1_Extract_Method("thisName");
 //        em.printOwing(11);
 //    }
 }

@@ -3,7 +3,7 @@ package _7;
 /**
  * 隐藏委托关系
  * */
-public class Hide_Delegate {
+public class _5_Hide_Delegate {
     class Person {
         Department department;
 

@@ -3,7 +3,7 @@ package _6;
 /**
  * 以查询取代临时变量
  * */
-public class Replace_Temp_with_Query {
+public class _4_Replace_Temp_with_Query {
 
     int quantity = 10, itemPrice = 10;
 

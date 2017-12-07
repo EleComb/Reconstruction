@@ -1,6 +1,6 @@
 package _7;
 
-public class Move_Method {
+public class _1_Move_Method {
     class Account {
 
         AccountType type;

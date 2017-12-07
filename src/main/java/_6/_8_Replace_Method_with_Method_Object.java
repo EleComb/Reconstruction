@@ -3,7 +3,7 @@ package _6;
 /**
  * 以函数对象取代函数
  * */
-public class Replace_Method_with_Method_Object {
+public class _8_Replace_Method_with_Method_Object {
 
     /**
      * 局部变量混杂，无法提取：建立新类把它们做成成员变量。
@@ -25,12 +25,12 @@ public class Replace_Method_with_Method_Object {
     }
 
     class Gamma {
-        private Replace_Method_with_Method_Object account;
+        private _8_Replace_Method_with_Method_Object account;
         private int inputVal;
         private int quantity;
         private int yearToDate;
 
-        Gamma(Replace_Method_with_Method_Object account,int inputVal, int quantity, int yearToDate) {
+        Gamma(_8_Replace_Method_with_Method_Object account, int inputVal, int quantity, int yearToDate) {
             this.account = account;
             this.inputVal = inputVal;
             this.quantity = quantity;

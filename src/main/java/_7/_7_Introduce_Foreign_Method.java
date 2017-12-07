@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * 引入外加函数。
  * */
-public class Introduce_Foreign_Method {
+public class _7_Introduce_Foreign_Method {
 
     private PriviousEnd previousEnd;
 

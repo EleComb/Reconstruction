@@ -1,6 +1,6 @@
 package _7;
 
-public class Extract_Class {
+public class _3_Extract_Class {
     class Person {
         public String getName() {
             return name;
