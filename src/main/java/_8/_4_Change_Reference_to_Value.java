@@ -8,14 +8,14 @@ import java.util.Hashtable;
  * */
 public class _4_Change_Reference_to_Value {
 
-    public static void main(String[] args) {
-
-        Currency.loadCustomers();
-        Currency usd = Currency.getNamed("USD");
-        System.out.println(usd);
-
-        System.out.println(new Currency("USD").equals(new Currency("USD"))); // not return false
-    }
+//    public static void main(String[] args) {
+//
+//        Currency.loadCustomers();
+//        Currency usd = Currency.getNamed("USD");
+//        System.out.println(usd);
+//
+//        System.out.println(new Currency("USD").equals(new Currency("USD"))); // not return false
+//    }
 
     // 引用对象
     static class Currency {
