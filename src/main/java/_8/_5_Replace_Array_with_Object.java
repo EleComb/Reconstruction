@@ -5,10 +5,31 @@ package _8;
  * */
 public class _5_Replace_Array_with_Object {
 
-    public static void main(String[] args) {
-        String[] row = new String[3];
-        row[0] = "Liverpool";
-        row[1] = "15";
+    public void test() {
+        Performance row = new Performance();
+        row.setName("Liverpool");
+        row.setWins("15");
+    }
+
+    class Performance {
+        String name;
+        String wins;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getWins() {
+            return wins;
+        }
+
+        public void setWins(String wins) {
+            this.wins = wins;
+        }
     }
 
 }
