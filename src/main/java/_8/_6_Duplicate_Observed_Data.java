@@ -28,9 +28,36 @@ class IntervalWindow extends Frame implements Observer{
         update(subject, null);
     }
 
-    public void update(Observable o, Object arg) {
-
+    String getEnd() {
+        return subject.getEnd();
     }
+
+    String getStart() {
+        return subject.getStart();
+    }
+
+    String getLength() {
+        return subject.getLength();
+    }
+
+    void setEnd(String end) {
+        subject.setEnd(end);
+    }
+
+    void setStart(String start) {
+        subject.setStart(start);
+    }
+
+    void setLength(String length) {
+        subject.setLength(length);
+    }
+
+    public void update(Observable o, Object arg) {
+        endField.setText(subject.getEnd());
+        startField.setText(subject.getStart());
+        lengthField.setText(subject.getLength());
+    }
+
 
     class SymFocus extends FocusAdapter {
 
@@ -45,26 +72,26 @@ class IntervalWindow extends Frame implements Observer{
         }
 
         void StartField_FocusLost(FocusEvent event) {
-            if(isNotInteger(startField.getText()))
-                startField.setText("0");
+            if(isNotInteger(getStart()))
+                setStart("0");
             calculateLength();
         }
 
         void EndField_FocusLost(FocusEvent event){
-            if (isNotInteger(endField.getText()))
-                endField.setText("0");
+            if (isNotInteger(getEnd()))
+                setEnd("0");
             calculateLength();
         }
 
         void LengthField_FocusLost(FocusEvent event) {
-            if(isNotInteger(lengthField.getText()))
-                lengthField.setText("0");
+            if(isNotInteger(getLength()))
+                setLength("0");
             calculateLength();
         }
 
         private boolean isNotInteger(String str) {
             try {
-                int i = Integer.valueOf(str);
+                Integer.valueOf(str);
             } catch (Exception e) {
                 return true;
             }
@@ -73,28 +100,88 @@ class IntervalWindow extends Frame implements Observer{
 
         void calculateLength() {
             try {
-                int start = Integer.parseInt(startField.getText());
-                int end = Integer.parseInt(endField.getText());
+                int start = Integer.parseInt(getStart());
+                int end = Integer.parseInt(getEnd());
                 int length = end - start;
-                lengthField.setText(String.valueOf(length));
+                setLength(String.valueOf(length));
             } catch ( NumberFormatException e) {
                 throw new RuntimeException("Unexpected Number Format Error");
             }
         }
 
+
         void calculateEnd() {
             try {
-                int start = Integer.parseInt(startField.getText());
-                int length = Integer.parseInt(lengthField.getText());
+                int start = Integer.parseInt(getStart());
+                int length = Integer.parseInt(getLength());
                 int end = start + length;
-                endField.setText(String.valueOf(end));
+                setEnd(String.valueOf(end));
             } catch (NumberFormatException e) {
                 throw new RuntimeException("Unexpected Number Format Error");
             }
         }
+
+        String getEnd() {
+            return endField.getText();
+        }
+
+        void setEnd(String arg) {
+            endField.setText(arg);
+        }
+
+        String getStart() {
+            return startField.getText();
+        }
+
+        void setStart(String start) {
+            startField.setText(start);
+        }
+
+        String getLength() {
+            return lengthField.getText();
+        }
+
+        void setLength(String length) {
+            lengthField.setText(length);
+        }
+
     }
 }
 
 class Interval extends Observable {
+
+    private String end = "0";
+    private String start = "0";
+    private String length = "0";
+
+    String getEnd() {
+        return end;
+    }
+
+    void setEnd(String end) {
+        this.end = end;
+        setChanged();
+        notifyObservers();
+    }
+
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+        setChanged();
+        notifyObservers();
+    }
+
+    public String getLength() {
+        return length;
+    }
+
+    public void setLength(String length) {
+        this.length = length;
+        setChanged();
+        notifyObservers();
+    }
 
 }
