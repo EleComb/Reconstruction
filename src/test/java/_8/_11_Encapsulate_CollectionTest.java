@@ -18,18 +18,23 @@ public class _11_Encapsulate_CollectionTest {
         kent.setCourse(s);
         Assert.assertEquals(2, kent.getCourse().size());
         _11_Encapsulate_Collection.Course refact = new _11_Encapsulate_Collection.Course("Refactoring", true);
-        kent.getCourse().add(refact);
-        kent.getCourse().add(new _11_Encapsulate_Collection.Course("Brutal Sarcasm", false));
+        kent.addCorse(refact);
+        kent.addCorse(new _11_Encapsulate_Collection.Course("Brutal Sarcasm", false));
         Assert.assertEquals(4, kent.getCourse().size());
         kent.getCourse().remove(refact);
         Assert.assertEquals(3, kent.getCourse().size());
 
-        Iterator iter = kent.getCourse().iterator();
+        int count = numberOfAdvancedCourses(kent);
+        System.out.println(count);
+    }
+
+    private int numberOfAdvancedCourses(_11_Encapsulate_Collection.Person person) {
+        Iterator iter = person.getCourse().iterator();
         int count = 0;
         while (iter.hasNext()) {
             _11_Encapsulate_Collection.Course each = (_11_Encapsulate_Collection.Course) iter.next();
             if (each.isAdvanced()) count++;
         }
-        System.out.println(count);
+        return count;
     }
 }
